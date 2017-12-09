@@ -1,0 +1,21 @@
+This step executes a remote job and wait for its finish.
+If the remote job failed the local build will fail as well.
+
+It accepts params:
+ - "credentials" - must be in format "username:apiToken"
+ - "host" - must contain schema as well (http://localhost:8080)
+ - "jobName" - name of a remote job
+ - "jobToken" - "Authentication Token" of a remote job
+ - "params" - Groovy "Map" with pairs "key: value" which will be passed to the remote job
+
+Example of the call:
+
+startRemoteJob(
+    credentials: "testuser:a74e0d01612bc4c7128fadcda97a90b4",
+    host: "http://localhost:8080",
+    jobName: "test",
+    jobToken: "test_token",
+    params: [
+        p1: "test value"
+    ]
+)
